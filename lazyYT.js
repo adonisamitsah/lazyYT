@@ -102,9 +102,10 @@
             }
           });
 
-        $.getJSON('//gdata.youtube.com/feeds/api/videos/' + id + '?v=2&alt=json', function (data) {
-            $el.find('#lazyYT-title-' + id).text(data.entry.title.$t);
-        });
+$.getJSON('https://noembed.com/embed',
+    {format: 'json', url: 'https://www.youtube.com/watch?v=' + id}, function (data) {
+    $el.find('#lazyYT-title-' + id).text(data.title);
+});
 
     }
 
